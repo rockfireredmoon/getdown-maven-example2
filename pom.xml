@@ -309,8 +309,8 @@
 	</build>
 	<pluginRepositories>
 		<pluginRepository>
-			<id>getdown-maven-plugin-mvn-repo</id>
-			<url>https://raw.github.com/rockfireredmoon/getdown-maven-plugin/mvn-repo/</url>
+			<id>taw-repo</id>
+			<url>http://files.theanubianwar.com/maven/snapshots/</url>
 			<snapshots>
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
