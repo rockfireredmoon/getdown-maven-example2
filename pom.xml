@@ -5,7 +5,7 @@
 	<name>Getdown Maven Example 2</name>
 	<description>Advanced Example POM that builds update directory and native installers for Linux, Mac OS X and Windows</description>
 	<groupId>org.icestuff</groupId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<build>
 
 		<plugins>
@@ -13,7 +13,7 @@
 			<plugin>
 				<groupId>org.icestuff</groupId>
 				<artifactId>getdown-maven-plugin</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.0.2-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -274,9 +274,9 @@
 			<!-- And now OS X -->
 
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
+				<groupId>com.agiliumlabs.osxappbundle</groupId>
 				<artifactId>osxappbundle-maven-plugin</artifactId>
-				<version>1.0-alpha-3-cm</version>
+				<version>1.0.1</version>
 				<configuration>
 					<buildDirectory>target/MyApp</buildDirectory>
 					<bundleName>MyApp</bundleName>
@@ -309,8 +309,8 @@
 	</build>
 	<pluginRepositories>
 		<pluginRepository>
-			<id>taw-repo</id>
-			<url>http://files.theanubianwar.com/maven/snapshots/</url>
+			<id>getdown-maven-github-repo</id>
+			<url>https://raw.githubusercontent.com/rockfireredmoon/getdown-maven-plugin/mvn-repo/</url>
 			<snapshots>
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
