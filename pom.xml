@@ -307,16 +307,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>getdown-maven-github-repo</id>
-			<url>https://raw.githubusercontent.com/rockfireredmoon/getdown-maven-plugin/mvn-repo/</url>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
 	<repositories>
 		<repository>
 			<id>codehaus-snapshots</id>
