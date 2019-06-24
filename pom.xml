@@ -4,16 +4,16 @@
 	<artifactId>getdown-maven-example2</artifactId>
 	<name>Getdown Maven Example 2</name>
 	<description>Advanced Example POM that builds update directory and native installers for Linux, Mac OS X and Windows</description>
-	<groupId>org.icestuff</groupId>
-	<version>0.0.3-SNAPSHOT</version>
+	<groupId>io.github.rockfireredmoon</groupId>
+	<version>0.9.0</version>
 	<build>
 
 		<plugins>
 			<!-- Create the update directory, stubs etc -->
 			<plugin>
-				<groupId>org.icestuff</groupId>
+				<groupId>io.github.rockfireredmoon</groupId>
 				<artifactId>getdown-maven-plugin</artifactId>
-				<version>0.0.3-SNAPSHOT</version>
+				<version>0.9.0</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -61,7 +61,7 @@
 			<plugin>
 				<artifactId>jdeb</artifactId>
 				<groupId>org.vafer</groupId>
-				<version>1.2</version>
+				<version>1.7</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -141,7 +141,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>rpm-maven-plugin</artifactId>
-				<version>2.1-alpha-4</version>
+				<version>2.2.0</version>
 				<extensions>true</extensions>
 				<executions>
 					<execution>
@@ -229,7 +229,7 @@
 				of setting this (that I can see), we move it using Ant -->
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
+				<version>1.8</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
