@@ -5,7 +5,7 @@
 	<name>Getdown Maven Example 2</name>
 	<description>Advanced Example POM that builds update directory and native installers for Linux, Mac OS X and Windows</description>
 	<groupId>io.github.rockfireredmoon</groupId>
-	<version>0.9.1-SNAPSHOT</version>
+	<version>0.9.1</version>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -18,7 +18,7 @@
 			<plugin>
 				<groupId>io.github.rockfireredmoon</groupId>
 				<artifactId>getdown-maven-plugin</artifactId>
-				<version>0.9.1-SNAPSHOT</version>
+				<version>0.9.1</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
