@@ -1,0 +1,1 @@
+Notes for 64 Bit will only be installed on 64 Bit systems

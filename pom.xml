@@ -5,7 +5,12 @@
 	<name>Getdown Maven Example 2</name>
 	<description>Advanced Example POM that builds update directory and native installers for Linux, Mac OS X and Windows</description>
 	<groupId>io.github.rockfireredmoon</groupId>
-	<version>0.9.0</version>
+	<version>0.9.1-SNAPSHOT</version>
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
 	<build>
 
 		<plugins>
@@ -13,7 +18,7 @@
 			<plugin>
 				<groupId>io.github.rockfireredmoon</groupId>
 				<artifactId>getdown-maven-plugin</artifactId>
-				<version>0.9.0</version>
+				<version>0.9.1-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -44,6 +49,51 @@
 								<status>20, 170, 316, 64</status>
 								<textShadow>111111</textShadow>
 							</ui>
+							
+							<!-- Add extra cross platform resources -->
+							
+							<resources>
+								<resource>
+									<path>src/main/documentation</path>
+									<excludes>
+										<exclude>*.html</exclude>
+									</excludes>
+								</resource>
+								<resource>
+									<path>README.md</path>
+								</resource>
+								<resource>
+									<path>src/main/documentation</path>
+									<includes>
+										<include>*.html</include>
+									</includes>
+									<prefix>html</prefix>
+								</resource>
+							</resources>
+							
+							<!-- Add extra platform specific  resources -->
+							<nresources>
+								<nresource>
+									<platform>linux</platform>
+									<path>src/main/native/linux_notes.txt</path>
+								</nresource>
+								<nresource>
+									<platform>windows</platform>
+									<path>src/main/native/windows_notes.txt</path>
+								</nresource>
+								<nresource>
+									<platform>mac os x</platform>
+									<path>src/main/native/mac_os_x_notes.txt</path>
+								</nresource>
+								<nresource>
+									<path>src/main/native/64_bit_notes.txt</path>
+									<platforms>
+										<platform>linux-amd64</platform>
+										<platform>windows-amd64</platform>
+										<platform>mac os x</platform>
+									</platforms>
+								</nresource>
+							</nresources>
 						</configuration>
 					</execution>
 				</executions>
@@ -61,7 +111,7 @@
 			<plugin>
 				<artifactId>jdeb</artifactId>
 				<groupId>org.vafer</groupId>
-				<version>1.7</version>
+				<version>1.8</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -229,7 +279,6 @@
 				of setting this (that I can see), we move it using Ant -->
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.8</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -307,14 +356,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<repositories>
-		<repository>
-			<id>codehaus-snapshots</id>
-			<url>http://nexus.codehaus.org/snapshots/</url>
-			<snapshots />
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</repository>
-	</repositories>
 </project>
