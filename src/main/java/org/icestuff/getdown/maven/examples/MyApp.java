@@ -14,7 +14,11 @@ public class MyApp extends JFrame {
 	public MyApp(String[] args) {
 		super("MyApp");
 		getContentPane().setLayout(new BorderLayout());
-		getContentPane().add(new JLabel("Hello World! (" + args[0] + ")"));
+		String message = "Hello World! ";
+		if (args.length > 0) {
+            message = message + args[0];
+        }
+		getContentPane().add(new JLabel(message));
 		pack();
 		setVisible(true);
 		addWindowListener(new WindowAdapter() {
